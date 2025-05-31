@@ -1,0 +1,5 @@
+-> Sort: crime_counts.yearmonth  (actual time=455..455 rows=13 loops=1)
+    -> Table scan on <temporary>  (actual time=455..455 rows=13 loops=1)
+        -> Aggregate using temporary table  (actual time=455..455 rows=13 loops=1)
+            -> Filter: (major_crime_indicators.OCC_DATE between '2018-01-01' and '2019-01-01')  (cost=49374 rows=45633) (actual time=102..361 rows=37887 loops=1)
+                -> Table scan on major_crime_indicators  (cost=49374 rows=410737) (actual time=0.0303..310 rows=420200 loops=1)

@@ -1,0 +1,5 @@
+-> Sort: crime_counts.yearmonth  (actual time=145..145 rows=13 loops=1)
+    -> Table scan on <temporary>  (actual time=145..145 rows=13 loops=1)
+        -> Aggregate using temporary table  (actual time=145..145 rows=13 loops=1)
+            -> Filter: (major_crime_indicators.OCC_DATE between '2018-01-01' and '2019-01-01')  (cost=19405 rows=77616) (actual time=0.0215..38.6 rows=37887 loops=1)
+                -> Covering index range scan on major_crime_indicators using index_occdate_mci over ('2018-01-01' <= OCC_DATE <= '2019-01-01')  (cost=19405 rows=77616) (actual time=0.0197..29.7 rows=37887 loops=1)
